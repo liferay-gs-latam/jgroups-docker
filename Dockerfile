@@ -26,7 +26,8 @@ WORKDIR /opt/jgroups
 
 
 ## Download JGroups src code and build JAR
-RUN git clone https://github.com/liferay-gs-latam/jgroups-docker.git && git fetch --all & git checkout jgroups-4.1.7
+RUN git clone https://github.com/liferay-gs-latam/jgroups-docker.git
+RUN git checkout origin/jgroups-4.1.7
 RUN cd jgroups-docker && ant jar src.jar ## compiles and places JAR in ./dist
 
 RUN chown -R jgroups.jgroups $HOME/*
