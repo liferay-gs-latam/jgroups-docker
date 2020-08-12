@@ -123,12 +123,18 @@
         <dependency>
             <groupId>org.jgroups</groupId>
             <artifactId>jgroups</artifactId>
-            <version>${jgroups.version}</version>
+            <version>4.1.7.Final</version>
         </dependency>
         <dependency>
             <groupId>org.jgroups.kubernetes</groupId>
             <artifactId>jgroups-kubernetes</artifactId>
             <version>[1.0,)</version>
+            <exclusions>
+            	<exclusion>
+            		<groupId>org.jgroups</groupId>
+            		<artifactId>jgroups</artifactId>
+            	</exclusion>
+            </exclusions>
         </dependency>
 
     </dependencies>
